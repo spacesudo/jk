@@ -109,12 +109,11 @@ def send_welcome(message):
     btn1 = types.InlineKeyboardButton('Demo account', callback_data='demo_acc')
     btn2 = types.InlineKeyboardButton('Start trading', callback_data='s')
     markup.add(btn2,btn1)
-    welcome_message = """
-Welcome to BlazeX Paper Trade Bot!!
-    
-You can trade Real-Time Base, Eth and Sol tokens with this Bot with virtual money, to learn to trade risk free and craft new strategies, monitoring your trades and more!
+    welcome_message = """Welcome to BlazeX Paper Trading Bot!
 
-To begin trading, paste a contract address on any of the following Networks (Base, Eth, Sol) and follow the steps after!
+This bot lets you trade Base, ETH, and SOL tokens in real-time using virtual currency, allowing you to practice trading without any risk, develop new strategies, track your trades, and more!
+
+To start, simply paste a contract address from any of the supported networks (Base, ETH, or SOL) and follow the instructions provided.
 """
     bot.send_message(message.chat.id, welcome_message, reply_markup=markup)
             
@@ -131,20 +130,19 @@ def send_balance(message):
 
 @bot.message_handler(commands=['help'])
 def send_help(message):
-    help_message = """ 🔥 *BlazeX  Paper Trade Bot* 🔥
-    
-    Each account has a default balance of $1000.
-To trade a token, paste the contract address of the token you want to trade and select the desired amount
-click the sell button to sell the token and take profits'
-Have fun trading and do not lose your capital!!!
-*COMMANDS*
-Use /alltrades command to see all trades
-/balance command to view your balance
-/resetbalance to reset your balance
-/cleartrades clears all previous trades
+    help_message = """ 🔥 BlazeX Paper Trading Bot 🔥
 
-⚠️⚠️ PLEASE NOTE YOU CANNOT TRADE 2 TOKENS AT A TIME ⚠️⚠️
+Each account starts with a balance of $1,000.
+To trade, enter the contract address of the token you want, specify the amount, and hit “sell” to cash out and secure profits.
+Enjoy trading and protect your virtual capital!
 
+COMMANDS
+Use /alltrades to view all trades
+Use /balance to check your current balance
+Use /resetbalance to reset your balance to default
+Use /cleartrades to delete all previous trades
+
+⚠️⚠️ REMINDER: ONLY ONE TOKEN CAN BE TRADED AT A TIME ⚠️⚠️
 
 
     """
